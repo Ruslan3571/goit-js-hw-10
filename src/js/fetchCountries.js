@@ -1,6 +1,7 @@
-export const fetchCountries = name => {
+const BAS_URL = 'https://restcountries.com';
+const fetchCountries = name => {
   return fetch(
-    `https://restcountries.com/v3.1/name/${name}?fields=,name,capital,population,flags,languages`
+    `${BAS_URL}/v3.1/name/${name}?fields=,name,capital,population,flags,languages`
   )
     .then(response => {
       if (!response.ok) {
@@ -15,3 +16,4 @@ export const fetchCountries = name => {
       console.error(error);
     });
 };
+export { fetchCountries };
